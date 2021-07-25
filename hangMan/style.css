@@ -1,6 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 *{
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
+
 svg{
   stroke : #000;
+}
+
+body{
+  background-color: #16a085;
+}
+
+.btn{
+  cursor: pointer;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 1px;
+  top: 20%;
+  right: 30px;
+  padding: 10px 15px;
+  border : 0;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: #e74c3c;
+}
+
+button:active{
+  transform: scale(0.8);
+}
+
+.wrapper{
+  position: relative;
+  top: 200px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figurePart{
+  display: none;
+}
+
+.popup-container{
+  background-color: rgba(46, 204, 113, 0.6);
+  position: fixed;
+
+  font-size: 15px;
+  letter-spacing: 1px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-container .popup{
+  background-color: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.6);
+  padding: 15px 25px;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.show-rightLetters-container{
+  margin: 30px auto;
+}
+.show-rightLetters-container .show-rightLetters{
+  text-align: center;
+}
+
+.letter{ 
+  border-bottom: 1px solid #fff;
+  display: inline-flex;
+  height: 40px;
+  width: 50px;
+  font-size: 24px;
+  margin: 0px 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.count-message{
+  margin: 40px 0px;
+}
+
+.count-message p{
+  font-size: 20px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.notification-container{
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: #fff;
+  letter-spacing: 1px;;
+  position: absolute;
+  margin: 10px;
+  top: -500px;
+  transition : transform 0.3s ease-in;
+}
+
+.notification-container.show{
+  transform: translatey(500px);
+}
+
+.wrongLetters-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.wrongLetters-container p{
+  margin: 0 0 20px;
+  position: relative;
+  font-size: 20px;
+  width: 250px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.wrongLetters-container span{
+  display: inline-flex;
+  width:30px;
+  margin: 0px 5px;
+  justify-content: center;
+  height: 30px;
+ border-radius: 2px;
+  font-size: 20px;
+  background-color: #badc58;
+  border : 0;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.alphabets-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.alphabets{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.alphabets button{
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: #f6e58d;
+  outline: 0;
+  color: rgb(63, 60, 60);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px rgba(0,0,0, 0.7);
 }

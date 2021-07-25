@@ -4,36 +4,76 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>HangMan</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="container" id = "container">
     <svg width = "250" height = "350">
+      <line x1 = "70" y1 = "100" x2 = "35" y2 = "330" />
+
+      <line x1 = "25" y1 = "300" x2 = "0" y2 = "340" />
+      <line x1 = "25" y1 = "300" x2 = "75" y2 = "300" />
+      <line x1 = "0" y1 = "340" x2 = "50" y2 = "340" />
+      <line x1 = "75" y1 = "300" x2 = "50" y2 = "340" /> 
+
+      <line x1 = "70" y1 = "100" x2 = 250 y2 = "100" />
+      <line x1 = "180" y1 = "100" x2 = "180" y2 = "180" />
       <!--Head-->
-      <circle cx = "180" cy = "200" r = "25" />
+      <circle cx = "180" cy = "200" r = "25" class = "figurePart"/>
       <!--body-->
-      <line x1 = "180" y1 = "225" x2 = "180" y2 = "280" stroke = "#000"/>
+      <line x1 = "180" y1 = "225" x2 = "180" y2 = "280" stroke = "#000" class = "figurePart"/>
       <!--arms-->
-      <line x1 = "180" y1 = "250" x2 = "150" y2 = "225" stroke = "#000"/>
-      <line x1 = "180" y1 = "250" x2 = "210" y2 = "225" stroke = "#000"/>
+      <line x1 = "180" y1 = "250" x2 = "150" y2 = "225" stroke = "#000" class = "figurePart"/>
+      <line x1 = "180" y1 = "250" x2 = "210" y2 = "225" stroke = "#000" class = "figurePart"/>
       <!--legs-->
-      <line x1 = "180" y1 = "280" x2 = "150"  y2 = "305" stroke = "#000"/>
-      <line x1 = "180" y1 = "280" x2 = "210" y2 = "305" stroke = "#000"/>
+      <line x1 = "180" y1 = "280" x2 = "150"  y2 = "305" stroke = "#000" class = "figurePart"/>
+      <line x1 = "180" y1 = "280" x2 = "210" y2 = "305" stroke = "#000" class = "figurePart"/>
     </svg>
-    
-<!--count message-->
-    <div class="count-message-container">
-      <div class="count-message"></div>
+
+    <div class="wrapper">
+      <!--alphabets-->
+    <div class="alphabets-container">
+       <div class="alphabets" id = "alphabets">
+
+      </div>
     </div>
+    <!--show Message-->
+  <div class="show-rightLetters-container">
+    <div class="show-rightLetters" id = "show-rightLetters">
+      
+    </div>
+  </div>
+  <!--count message-->
+  <div class="count-message-container">
+    <div class="count-message" id = "count-message"></div>
+  </div>
+
+  
+  <div class="wrongLetters-container" id = "wrongLetters-container">
+    <div class="wrongLetters" id = "wrongLetters"></div>
+  </div>
+
+  </div>
+  
+  <!--notification-->
+  <div class="notification-container" id = "notification-container">
+    <div class="notification" id = "notification">
+      <p>You have already put this letter</p>
+    </div>
+  </div>
+</div>
 
 <!--popup-->
-<div class="popup-container">
-  <div class="popup">
+<div class="popup-container" id = "popup-container">
+  <div class="popup" id = "popup">
+    <p id = "final-message" class = "final-message"></p>
+    <button id = "btn" class = "btn">reset</button>
+  </div>
+</div>
 
-  </div>
-</div>
-  </div>
-</div>
+<script src = "./script.js"></script>
+</body>
 
 
 
