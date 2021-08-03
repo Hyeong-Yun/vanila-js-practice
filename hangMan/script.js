@@ -19,38 +19,42 @@ let figureLength = figureParts.length;
 let selectedWord = words[Math.floor(Math.random()*words.length)];
 const rightLetters = [];
 const wrongLetters = [];
+const clickLettersArr = []; 
 
 let playable = true;
 
-function arrayAlphabet(){
-	for(let i =0; i < alphabets.length; i++){
-		const button = document.createElement('button');
-		button.innerHTML = alphabets[i];
-		button.value = alphabets[i];
-		alphabetsEl.appendChild(button)
+function checkWord(){
+	const guess = this.innerText;
+	console.log(guess);
 
-	}
-
-	alphabetsEl.addEventListener('click', e =>{
-		const alpahbet = e.target.value;
-
-		console.log(alpahbet)
-		if (selectedWord.includes(alpahbet)) {
-			if (!rightLetters.includes(alpahbet)) {
-				rightLetters.push(alpahbet);
-				displayLetter();
-			} else {
-				showMessage();
-			}
-		} else {
-			if (!wrongLetters.includes(alpahbet)) {
-				wrongLetters.push(alpahbet);
+	if(this.classList.contains('active')){
+		console.log(this)
+		showMessage();
+	}else{
+		clickLettersArr.push(guess);
+		this.setAttribute("class", "active");
+		if(!selectedWord.includes(guess)){
+			if(!wrongLetters.includes(guess)){
+				wrongLetters.push(guess);
 				updateWrongLettersEl();
-			} else {
-				showMessage();
 			}
 		}
-	})
+	}
+}
+
+function arrayAlphabet(){
+	const ul = document.createElement('ul');
+
+	for(let i =0; i < alphabets.length; i++){
+		const li = document.createElement('li');
+		li.innerHTML = alphabets[i];
+		
+		li.addEventListener('click', checkWord)
+		
+		ul.appendChild(li);
+	}
+
+	alphabetsEl.appendChild(ul);
 }
 
 function displayLetter(){
@@ -86,7 +90,7 @@ function updateWrongLettersEl(){
 
 	 if(index < wrongLength){
 		 count_message.innerHTML = `<p>You have   
-		 <span style = "color : yellow"> ${figureLength - wrongLetters.length} </span> more chances</p>`;
+		 <span style = "color : yellow"> ${figureLength - wrongLength} </span> more chances</p>`;
 		  part.style.display = 'block';
 	 }else{
 		 part.style.display = 'none';

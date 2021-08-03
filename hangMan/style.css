@@ -153,14 +153,18 @@ button:active{
 }
 
 .alphabets{
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+.alphabets ul{
+  width: 100%;
+  list-style-type: none;
 
-.alphabets button{
+}
+.alphabets li{
   margin: 5px;
   display: inline-flex;
   justify-content: center;

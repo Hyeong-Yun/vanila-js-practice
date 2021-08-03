@@ -30,6 +30,7 @@ function searchMeal(e){
                 `).join('');
             }
         })
+
         search.value = '';
     }else{
         alert('Please enter a search term');
@@ -46,6 +47,7 @@ function addMealToDOM(meal){
             break;
         }
     }
+
     searchgMealEl.innerHTML = `
     <div class="single-meal">
     <h1>${meal.strMeal}</h1>
